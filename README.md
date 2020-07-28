@@ -1,5 +1,7 @@
 # Port of flux-standard-action npm package for Deno
 
+![Lint, tests and build](https://github.com/arsenykruglikov/flux-standard-action/workflows/Lint,%20tests%20and%20build/badge.svg)
+
 ## Motivation for port
 
 This project inspired by [timche's](https://github.com/timche) package flux-standard-action. Thank you a lot for such a good starting point to do this port. And consider seeing his GitHub account and repos and press a like button.
