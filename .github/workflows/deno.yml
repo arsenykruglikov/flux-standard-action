@@ -29,4 +29,4 @@ jobs:
         run: deno test ./tests
 
       - name: Check module builds without errors
-        run: deno bundle mod.ts flux-standard-action.bundle.js
+        run: deno bundle mod.ts flux_standard_action.bundle.js

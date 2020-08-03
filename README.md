@@ -1,8 +1,8 @@
-# Port of flux-standard-action npm package for Deno
+# flux_standard_action — port of flux-standard-action npm package for Deno
 
 ![Lint, tests and build](https://github.com/arsenykruglikov/flux-standard-action/workflows/Lint,%20tests%20and%20build/badge.svg)
 
-## Motivation for port
+## Motivation for port and credits
 
 This project inspired by [timche's](https://github.com/timche) package flux-standard-action. Thank you a lot for such a good starting point to do this port. And consider seeing his GitHub account and repos and press a like button.
 
@@ -14,17 +14,17 @@ You can see the original explanation [here](https://github.com/redux-utilities/f
 
 ## Utility functions
 
-The module `flux-standard-action` is available on deno.land/x. It exports a few utility functions.
+The module `flux_standard_action` is available on deno.land/x. It exports a few utility functions.
 
 ### `isFSA(action)`
 
 ```typescript
-import { isFSA } from 'https://deno.land/x/flux-standard-action/mod.ts';
+import { isFSA } from 'https://deno.land/x/flux_standard_action/mod.ts';
 
 const action: any = JSON.parse('{ "type": "ACTION_TYPE" }')
 
 if (isFSA(action)) {
-  // now action is checked, considered as flux-standard-action and has a type FluxStandardAction<Type, Payload, Meta>
+  // now action is checked, considered as flux_standard_action and has a type FluxStandardAction<Type, Payload, Meta>
   const type = action.type;
 }
 ```
@@ -34,7 +34,7 @@ Returns true if `action` is FSA compliant.
 ### `isError(action)`
 
 ```typescript
-import { isError } from 'https://deno.land/x/flux-standard-action/mod.ts';
+import { isError } from 'https://deno.land/x/flux_standard_action/mod.ts';
 
 const action: any = JSON.parse('{ "type": "SOME_ERROR_TYPE", "error": true }')
 
