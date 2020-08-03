@@ -1,0 +1,32 @@
+name: Lint, tests and build
+
+on:
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Instal Deno
+        run: curl -fsSL https://deno.land/x/install/install.sh | sh -s v1.2.0
+
+      - name: Setup Deno
+        run: echo "::set-env name=DENO_INSTALL::$HOME/.deno"
+
+      - name: Add Deno to $PATH
+        run: echo "::add-path::$DENO_INSTALL/bin"
+
+      - name: Lint module
+        run: deno lint --unstable
+
+      - name: Test module
+        run: deno test ./tests
+
+      - name: Check module builds without errors
+        run: deno bundle mod.ts flux_standard_action.bundle.js
